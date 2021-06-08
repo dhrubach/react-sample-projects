@@ -36,6 +36,7 @@ testem.log
 /typings
 .VSCodeCounter
 bin.wasm
+.eslintcache
 
 # System Files
 .DS_Store
