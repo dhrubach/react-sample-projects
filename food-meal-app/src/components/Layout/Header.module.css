@@ -28,9 +28,8 @@
 
 .main-image img {
 	width: 110%;
-	height: 100%;
 
-	transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
+	transform: rotateZ(10deg) translateY(-4rem) translateX(-1rem);
 
 	object-fit: cover;
 }
