@@ -1,9 +1,9 @@
 .meals {
 	width: 90%;
-	max-width: 60rem;
+	max-width: 74rem;
 	margin: 2rem auto;
 
-	animation: meals-appear 1s ease-out forwards;
+	animation: meals-appear 2s ease-out forwards;
 }
 
 .meals ul {
@@ -15,7 +15,7 @@
 
 @keyframes meals-appear {
 	from {
-		transform: translateY(3rem);
+		transform: translateY(5rem);
 
 		opacity: 0;
 	}
