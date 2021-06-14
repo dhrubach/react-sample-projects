@@ -1,0 +1,22 @@
+.input {
+	display: flex;
+	align-items: center;
+
+	margin-bottom: 0.5rem;
+}
+
+.input label {
+	font-weight: bold;
+
+	margin-right: 1rem;
+}
+
+.input input {
+	font: inherit;
+
+	width: 3rem;
+	padding-left: 0.5rem;
+
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
