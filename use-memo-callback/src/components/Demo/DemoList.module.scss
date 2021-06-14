@@ -1,0 +1,31 @@
+.demo-list {
+	&__content {
+		width: 200px;
+		margin: 3.2rem 0;
+		padding: 1rem;
+
+		text-align: center;
+
+		border-radius: 0.4rem;
+		background-color: #238a9cec;
+	}
+
+	&__item {
+		list-style: none;
+
+		& > li {
+			margin-bottom: 0.5rem;
+
+			cursor: pointer;
+			border-radius: 0.4rem;
+
+			&:nth-child(2n + 1) {
+				background-color: darken($color: #238a9cec, $amount: 20);
+			}
+
+			&:nth-child(2n) {
+				background-color: darken($color: #238a9cec, $amount: 10);
+			}
+		}
+	}
+}

@@ -1,9 +1,18 @@
+$primary-bg-color: #238a9cec;
+
 .primary-button {
 	width: 150px;
 	height: 48px;
 	margin-top: 1.6rem;
 
+	cursor: pointer;
+
 	border: 0;
 	border-radius: 24px;
-	background-color: #238a9cec;
+	background-color: $primary-bg-color;
+
+	&:hover,
+	&:active {
+		background-color: darken($color: $primary-bg-color, $amount: 20);
+	}
 }
