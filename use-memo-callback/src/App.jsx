@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import Button from "./components/UI/Button";
 import Message from "./components/UI/Message";
@@ -7,9 +7,10 @@ function App() {
 	console.log(`re-evaluating app component`);
 	const [showParagraph, setShowParagraph] = useState(false);
 
-	const toggleParagraphContainer = () => {
+	const toggleParagraphContainer = useCallback(() => {
+		console.log(`executing callback`);
 		setShowParagraph((prevStateValue) => !prevStateValue);
-	};
+	}, []);
 
 	return (
 		<main>
