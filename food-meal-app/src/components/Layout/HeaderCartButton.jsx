@@ -5,7 +5,7 @@ import styles from "./HeaderCartButton.module.scss";
 
 const HeaderCartButton = (props) => {
 	return (
-		<button className={styles.button}>
+		<button className={styles.button} onClick={props.onShowCart}>
 			<span className={styles.icon}>
 				<CartIcon />
 			</span>

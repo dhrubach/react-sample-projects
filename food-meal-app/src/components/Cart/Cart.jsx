@@ -14,7 +14,7 @@ const Cart = (props) => {
 	].map((item) => <li>{item.name}</li>);
 
 	return (
-		<Modal>
+		<Modal hideCartModal={props.onHideCart}>
 			<div>
 				<ul className={styles["cart-items"]}>{cartItems}</ul>
 			</div>
@@ -23,7 +23,12 @@ const Cart = (props) => {
 				<span>35.63</span>
 			</div>
 			<div className={styles.actions}>
-				<button className={styles["button--alt"]}>Close</button>
+				<button
+					className={styles["button--alt"]}
+					onClick={props.onHideCart}
+				>
+					Close
+				</button>
 				<button className={styles.button}>Order</button>
 			</div>
 		</Modal>
