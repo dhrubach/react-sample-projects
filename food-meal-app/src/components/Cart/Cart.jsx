@@ -8,8 +8,8 @@ import Modal from "./../UI/Modal";
 const Cart = (props) => {
 	const cartContext = useContext(CartContext);
 
-	const onAddHandler = (item) => {};
-	const onRemoveHandler = (id) => {};
+	const onAddHandler = (item) => cartContext.addItem(item);
+	const onRemoveHandler = (id) => cartContext.removeItem(id);
 
 	const cartItems = cartContext.items.map((item) => (
 		<CartItem
