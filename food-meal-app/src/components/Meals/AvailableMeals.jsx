@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./AvailableMeals.module.scss";
 import Card from "./../UI/Card";
@@ -6,8 +6,9 @@ import MealItem from "./MealItem";
 
 const AvailableMeals = (props) => {
 	const [meals, setMeals] = useState([]);
+	const [isError, setError] = useState(false);
 
-	const fetchMealsHandler = useCallback(async () => {
+	const fetchMealsHandler = async () => {
 		const mealsResponse = await fetch(
 			`https://react-food-meal-app-default-rtdb.firebaseio.com/meals.json`
 		);
@@ -25,11 +26,13 @@ const AvailableMeals = (props) => {
 		});
 
 		setMeals(mealsArray);
-	}, []);
+	};
 
 	useEffect(() => {
-		fetchMealsHandler();
-	}, [fetchMealsHandler]);
+		fetchMealsHandler().catch(() => {
+			setError(true);
+		});
+	}, []);
 
 	const mealsList = meals.map((meal) => {
 		return (
@@ -44,11 +47,16 @@ const AvailableMeals = (props) => {
 	});
 
 	return (
-		<section className={styles.meals}>
-			<Card>
-				<ul>{mealsList}</ul>
-			</Card>
-		</section>
+		<React.Fragment>
+			{isError && <section>Fetch error...</section>}
+			{!isError && (
+				<section className={styles.meals}>
+					<Card>
+						<ul>{mealsList}</ul>
+					</Card>
+				</section>
+			)}
+		</React.Fragment>
 	);
 };
 
