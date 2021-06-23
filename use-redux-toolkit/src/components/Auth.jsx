@@ -1,6 +1,16 @@
+import { useDispatch } from "react-redux";
+
+import { login } from "./../store/auth-slice";
 import styles from "./Auth.module.scss";
 
 const Auth = () => {
+	const dispatch = useDispatch();
+
+	const onLoginHandler = (event) => {
+		event.preventDefault();
+		dispatch(login());
+	};
+
 	return (
 		<main className={styles.auth}>
 			<section>
@@ -13,7 +23,7 @@ const Auth = () => {
 						<label htmlFor="password">Password</label>
 						<input type="password" id="password" />
 					</div>
-					<button>Login</button>
+					<button onClick={onLoginHandler}>Login</button>
 				</form>
 			</section>
 		</main>
