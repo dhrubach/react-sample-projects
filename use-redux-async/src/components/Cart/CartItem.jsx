@@ -1,10 +1,10 @@
 import styles from "./CartItem.module.scss";
 
 const CartItem = (props) => {
-	const { title, quantity, total, price } = props.item;
+	const { id, title, quantity, total, price } = props.item;
 
 	return (
-		<li className={styles.item}>
+		<li className={styles.item} key={id}>
 			<header>
 				<h3>{title}</h3>
 				<div className={styles.price}>
