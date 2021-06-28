@@ -1,0 +1,79 @@
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: sans-serif;
+	font-size: 1.6rem;
+	font-weight: 300;
+	line-height: 1.6;
+
+	box-sizing: border-box;
+	margin: 0;
+
+	color: #252525;
+	background-color: #e7f8f8;
+}
+
+.centered {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: 3rem auto;
+
+	text-align: center;
+}
+
+.focused {
+	font-size: 3rem;
+	font-weight: bold;
+
+	color: white;
+}
+
+.btn {
+	padding: 0.75rem 1.5rem;
+
+	cursor: pointer;
+	text-decoration: none;
+
+	color: white;
+	border: 1px solid teal;
+	border-radius: 4px;
+	background-color: teal;
+}
+
+.btn:hover,
+.btn:active {
+	border-color: #11acac;
+	background-color: #11acac;
+}
+
+.btn--flat {
+	font: inherit;
+
+	padding: 0.75rem 1.5rem;
+
+	cursor: pointer;
+	text-decoration: none;
+
+	color: teal;
+	border: none;
+	border-radius: 4px;
+	background-color: none;
+}
+
+.btn--flat:hover,
+.btn--flat:active {
+	color: white;
+	background-color: teal;
+}

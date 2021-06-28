@@ -1,0 +1,30 @@
+.list {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.sorting {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+
+	border-bottom: 3px solid #b2d4d4;
+}
+
+.sorting button {
+	font: inherit;
+
+	padding: 0.5rem 1.5rem;
+
+	cursor: pointer;
+
+	color: teal;
+	border: 1px solid teal;
+	border-radius: 4px;
+	background-color: transparent;
+}
+
+.sorting button:hover {
+	background-color: #c2fafa;
+}
