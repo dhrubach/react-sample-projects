@@ -42,4 +42,4 @@ const QuoteForm = (props) => {
 	);
 };
 
-export default QuoteForm;
+export { QuoteForm };

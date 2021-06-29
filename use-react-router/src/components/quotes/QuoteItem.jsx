@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styles from "./QuoteItem.module.scss";
 
 const QuoteItem = (props) => {
@@ -9,7 +11,9 @@ const QuoteItem = (props) => {
 				</blockquote>
 				<figcaption>{props.author}</figcaption>
 			</figure>
-			<a className="btn">View Fullscreen</a>
+			<Link className="btn" to={`/quotes/${props.id}`}>
+				View Fullscreen
+			</Link>
 		</li>
 	);
 };

@@ -20,4 +20,4 @@ const QuoteList = (props) => {
 	);
 };
 
-export default QuoteList;
+export { QuoteList };
