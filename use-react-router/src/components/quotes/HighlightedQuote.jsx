@@ -9,4 +9,4 @@ const HighlightedQuote = (props) => {
 	);
 };
 
-export default HighlightedQuote;
+export { HighlightedQuote };
