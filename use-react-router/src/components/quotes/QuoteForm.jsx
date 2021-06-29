@@ -1,10 +1,12 @@
-import { useRef } from "react";
+import { Fragment, useRef, useState } from "react";
+import { Prompt } from "react-router-dom";
 
 import Card from "../ui/Card";
 import LoadingSpinner from "../ui/LoadingSpinner";
 import styles from "./QuoteForm.module.scss";
 
 const QuoteForm = (props) => {
+	const [isEntering, setIsEntering] = useState(false);
 	const authorInputRef = useRef();
 	const textInputRef = useRef();
 
@@ -17,28 +19,52 @@ const QuoteForm = (props) => {
 		props.onAddQuote({ author: enteredAuthor, text: enteredText });
 	}
 
-	return (
-		<Card>
-			<form className={styles.form} onSubmit={submitFormHandler}>
-				{props.isLoading && (
-					<div className={styles.loading}>
-						<LoadingSpinner />
-					</div>
-				)}
+	const formFocusHandler = () => {
+		setIsEntering(true);
+	};
 
-				<div className={styles.control}>
-					<label htmlFor="author">Author</label>
-					<input type="text" id="author" ref={authorInputRef} />
-				</div>
-				<div className={styles.control}>
-					<label htmlFor="text">Text</label>
-					<textarea id="text" rows="5" ref={textInputRef}></textarea>
-				</div>
-				<div className={styles.actions}>
-					<button className="btn">Add Quote</button>
-				</div>
-			</form>
-		</Card>
+	const resetEnteringState = () => {
+		setIsEntering(false);
+	};
+
+	return (
+		<Fragment>
+			<Prompt
+				when={isEntering}
+				message={`Data will be lost if you navigate away for the page`}
+			></Prompt>
+			<Card>
+				<form
+					onFocus={formFocusHandler}
+					className={styles.form}
+					onSubmit={submitFormHandler}
+				>
+					{props.isLoading && (
+						<div className={styles.loading}>
+							<LoadingSpinner />
+						</div>
+					)}
+
+					<div className={styles.control}>
+						<label htmlFor="author">Author</label>
+						<input type="text" id="author" ref={authorInputRef} />
+					</div>
+					<div className={styles.control}>
+						<label htmlFor="text">Text</label>
+						<textarea
+							id="text"
+							rows="5"
+							ref={textInputRef}
+						></textarea>
+					</div>
+					<div className={styles.actions}>
+						<button onClick={resetEnteringState} className="btn">
+							Add Quote
+						</button>
+					</div>
+				</form>
+			</Card>
+		</Fragment>
 	);
 };
 
