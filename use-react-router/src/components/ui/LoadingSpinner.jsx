@@ -4,4 +4,4 @@ const LoadingSpinner = () => {
 	return <div className={styles.spinner}></div>;
 };
 
-export default LoadingSpinner;
+export { LoadingSpinner };

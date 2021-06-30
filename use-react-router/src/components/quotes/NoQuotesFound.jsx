@@ -9,4 +9,4 @@ const NoQuotesFound = () => {
 	);
 };
 
-export default NoQuotesFound;
+export { NoQuotesFound };
