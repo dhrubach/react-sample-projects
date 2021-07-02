@@ -1,5 +1,5 @@
 import { Card } from "../ui/Card";
-import styles from "./MeetupItem.module.css";
+import styles from "./MeetupItem.module.scss";
 
 function MeetupItem(props) {
 	return (
