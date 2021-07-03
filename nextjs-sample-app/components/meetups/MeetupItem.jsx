@@ -1,7 +1,15 @@
+import { useRouter } from "next/router";
+
 import { Card } from "../ui/Card";
 import styles from "./MeetupItem.module.scss";
 
 function MeetupItem(props) {
+	const router = useRouter();
+
+	const showDetailsHandler = () => {
+		router.push(`/${props.id}`);
+	};
+
 	return (
 		<li className={styles.item}>
 			<Card>
@@ -13,7 +21,7 @@ function MeetupItem(props) {
 					<address>{props.address}</address>
 				</div>
 				<div className={styles.actions}>
-					<button>Show Details</button>
+					<button onClick={showDetailsHandler}>Show Details</button>
 				</div>
 			</Card>
 		</li>
